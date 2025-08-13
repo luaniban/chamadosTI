@@ -40,6 +40,7 @@ class Create extends Component
 
         $this->escola = \App\Models\Escola::find($this->chamadoSelecionado->escola_id)->name;
         $this->modal = true;
+        
         $this->status_atualizado = $this->chamadoSelecionado->status;
     }
 
@@ -62,7 +63,7 @@ class Create extends Component
 
         $this->closeModal();
         $this->dispatch('dispatch-chamado-feito');
-        $this->reset(['resposta', 'anexo', 'status_atualizado', 'notificar_solicitante', 'nota_interna']);
+        $this->reset(['resposta', 'anexo', 'status_atualizado', 'notificar_solicitante', 'nota_interna', 'tempo_gasto']);
     }
 
 
