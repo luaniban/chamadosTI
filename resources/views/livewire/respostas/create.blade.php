@@ -115,9 +115,9 @@
                                     <x-ts-select.styled wire:model="status_atualizado"
                                         :options="[
 
-                                            ['label' => 'Em análise',           'value' => 'Em analise'],
+                                            ['label' => 'Em analise',           'value' => 'Em analise'],
                                             ['label' => 'Em andamento',         'value' => 'Em andamento'],
-                                            ['label' => 'Aguardando usuário',   'value' => 'Aguardando usuario'],
+                                            ['label' => 'Aguardando usuario',   'value' => 'Aguardando usuario'],
                                             ['label' => 'Resolvido',            'value' => 'Resolvido'],
                                             ['label' => 'Fechado',              'value' => 'Fechado'],
                                         ]"

@@ -1,8 +1,9 @@
 <?php
 
 use Livewire\Livewire;
-use App\Livewire\ChamadoIndex;
 use App\Livewire\Index;
+use App\Livewire\ChamadoIndex;
+use App\Livewire\ShowRespostaForUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,4 +22,5 @@ Route::middleware([
 
     Route::get('/dashboard', Index::class)->name('dashboard');
     Route::get('/', ChamadoIndex::class)->name('index');
+    Route::get('/show-respostas', ShowRespostaForUser::class)->name('show-respostas');
 });
