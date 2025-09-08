@@ -40,7 +40,7 @@ class Create extends Component
 
         $this->escola = \App\Models\Escola::find($this->chamadoSelecionado->escola_id)->name;
         $this->modal = true;
-        
+
         $this->status_atualizado = $this->chamadoSelecionado->status;
     }
 

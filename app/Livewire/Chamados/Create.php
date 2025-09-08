@@ -38,14 +38,22 @@ class Create extends Component
             'titulo' => $this->titulo,
             'descricao' => $this->descricao,
             'categoria' => $this->categoria,
-            'escola_id' => 1,
+            'escola_id' => $this->escola_id,
             'urgencia' => $this->urgencia,
             'status' => "Em Andamento",
             'solicitante_id' => auth()->user()->id
         ]);
 
-        $this->toast()->success('Chamado criado com sucesso!')->send();
+        $this->toast()->success('Chamado enviado com sucesso!')->send();
+        $this->resetCampos();
+    }
 
+    public function resetCampos(){
+        $this->titulo = null;
+        $this->descricao = null;
+        $this->escola_id = null;
+        $this->categoria = null;
+        $this->urgencia = null;
     }
 
 

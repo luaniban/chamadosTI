@@ -28,4 +28,9 @@ class Chamado extends Model
     {
         return $this->hasOne(Resposta::class);
     }
+
+    public function escola()
+    {
+        return $this->belongsTo(Escola::class, 'escola_id');
+    }
 }

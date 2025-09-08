@@ -1,3 +1,4 @@
+
 <div class="min-h-screen p-6 bg-slate-50">
 
     <div class="max-w-3xl mx-auto shadow-sm bg-white/90 backdrop-blur rounded-2xl ring-1 ring-slate-200">
@@ -37,28 +38,34 @@
         </div>
 
         {{-- Grid de selects --}}
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid h-40 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
           {{-- Escola --}}
-          <div>
+          <div class="">
             <label for="escola_id" class="mb-1.5 block text-sm font-medium text-slate-700">
               Escola <span class="text-rose-500">*</span>
             </label>
 
             @php
-              $opcoesEscolas = $escolas->map(fn($escola) => [
+            $opcoesEscolas = $escolas->map(fn($escola) => [
                 'label' => $escola->name,
                 'value' => $escola->id,
-              ])->toArray();
-            @endphp
+            ])->toArray();
 
-            <x-ts-select.styled
+            // adiciona a opção "placeholder"
+            array_unshift($opcoesEscolas, [
+                'label' => 'Selecione a escola',
+                'value' => '',
+            ]);
+          @endphp
+
+          <x-ts-select.native
               id="escola_id"
               wire:model.defer="escola_id"
               :options="$opcoesEscolas"
-              placeholder="Selecione a escola"
               class="w-full h-11 rounded-xl border-slate-300 focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500"
-            />
+          />
+
 
           </div>
 
@@ -69,6 +76,7 @@
             </label>
             @php
             $opcoesCategoria = [
+                ['label' => 'Selecione a categoria','value' => ''],
                 ['label' => 'Hardware (PC/Notebook/Periféricos)', 'value' => 'hardware'],
                 ['label' => 'Rede & Internet (cabeada)',          'value' => 'rede_internet'],
                 ['label' => 'Wi‑Fi / Autenticação',                'value' => 'wifi'],
@@ -88,7 +96,7 @@
             ];
             @endphp
 
-            <x-ts-select.styled
+            <x-ts-select.native
                 id="categoria"
                 wire:model.defer="categoria"
                 :options="$opcoesCategoria"
@@ -103,18 +111,19 @@
             <label for="urgencia" class="mb-1.5 block text-sm font-medium text-slate-700">
               Urgência <span class="text-rose-500">*</span>
             </label>
-            <x-ts-select.styled
+            <x-ts-select.native
               id="urgencia"
               wire:model.defer="urgencia"
               placeholder="Selecione a urgência"
               :options="[
+                ['label' => 'Selecione a urgência', 'value' => ''],
                 ['label' => 'Baixa', 'value' => 'Baixa'],
                 ['label' => 'Média', 'value' => 'Media'],
                 ['label' => 'Alta', 'value' => 'Alta'],
               ]"
               class="w-full h-11 rounded-xl border-slate-300 focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500"
             />
-            
+
           </div>
 
         </div>

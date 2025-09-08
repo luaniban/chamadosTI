@@ -12,11 +12,15 @@ class ShowRespostaForUser extends Component
     public $respostas;
 
 
+    public function dispatchShowResponse($id){
+        $this->dispatch('dispatch-open-resposta', $id);
+    }
+
 
     public function mount(){
         $user = auth()->user();
         $this->chamados = Chamado::where('solicitante_id', $user->id)->get();
-        
+
     }
 
     public function render()
