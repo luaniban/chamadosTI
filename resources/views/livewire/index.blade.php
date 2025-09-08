@@ -43,7 +43,7 @@
             </div>
 
             <!-- Tabela de Chamados Recentes -->
-            <div class="p-4 bg-white shadow rounded-2xl">
+            <div class="p-4 bg-white shadow rounded-2xl min-h-96">
               <h2 class="mb-4 text-lg font-semibold text-gray-700">Últimos Chamados</h2>
               <div class="overflow-x-auto">
                     <livewire:chamados.show-chamados />
