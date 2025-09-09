@@ -1,6 +1,6 @@
 <div class="min-h-96">
     <div class="grid grid-cols-6 gap-4 mb-4 ">
-        <x-ts-input icon="magnifying-glass" placeholder="Pesquisar..." wire:change="filtrar" wire:model.500ms="search" class=""></x-ts-input>
+        <x-ts-input icon="magnifying-glass" placeholder="Pesquisar..." wire:change="filtrar" wire:model.debounce="search" class=""></x-ts-input>
 
 
         @php

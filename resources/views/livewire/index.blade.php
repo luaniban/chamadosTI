@@ -8,19 +8,19 @@
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div class="p-4 bg-white shadow rounded-2xl">
                 <h2 class="text-sm font-medium text-gray-500">Chamados Abertos</h2>
-                <p class="mt-2 text-2xl font-bold text-blue-600">12</p>
+                <x-ts-stats :number="$chamadosAbertos" animated  class="mt-2 text-2xl font-bold text-blue-500 shadow-none"/>
               </div>
               <div class="p-4 bg-white shadow rounded-2xl">
                 <h2 class="text-sm font-medium text-gray-500">Em Atendimento</h2>
-                <p class="mt-2 text-2xl font-bold text-yellow-500">5</p>
+                <x-ts-stats :number="$chamadosEmAtendimento" animated  class="mt-2 text-2xl font-bold text-yellow-500 shadow-none"/>
               </div>
               <div class="p-4 bg-white shadow rounded-2xl">
                 <h2 class="text-sm font-medium text-gray-500">Resolvidos</h2>
-                <p class="mt-2 text-2xl font-bold text-green-500">30</p>
+                <x-ts-stats :number="$chamadosConcluidos" animated  class="mt-2 text-2xl font-bold text-green-500 shadow-none"/>
               </div>
               <div class="p-4 bg-white shadow rounded-2xl">
                 <h2 class="text-sm font-medium text-gray-500">Cancelados</h2>
-                <p class="mt-2 text-2xl font-bold text-red-500">2</p>
+                <x-ts-stats :number="$chamadosEncerrados" animated  class="mt-2 text-2xl font-bold text-red-500 shadow-none"/>
               </div>
             </div>
 
